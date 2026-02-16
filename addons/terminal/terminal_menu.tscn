@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckc1sg17rg3xr"]
+[gd_scene format=3 uid="uid://ckc1sg17rg3xr"]
 
-[ext_resource type="Script" path="res://addons/terminal/terminal_menu.gd" id="1_x7sc3"]
+[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/terminal/terminal_menu.gd" id="1_x7sc3"]
 
 [sub_resource type="GDScript" id="GDScript_6h83f"]
 script/source = "extends TextEdit
@@ -16,7 +16,7 @@ func _process(delta):
 	pass
 "
 
-[node name="TerminalMenu" type="Control"]
+[node name="TerminalMenu" type="Control" unique_id=917503826]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ menuOpenInputAxis = "toggle_terminal_menu"
 menuUpAxis = "terminal_up"
 menuClearAxis = "terminal_clear"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1752248051]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -36,7 +36,7 @@ anchor_bottom = 0.8
 offset_right = -0.0460205
 offset_bottom = -0.185974
 
-[node name="Label" type="TextEdit" parent="ScrollContainer"]
+[node name="Label" type="TextEdit" parent="ScrollContainer" unique_id=250962370]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -48,7 +48,7 @@ draw_control_chars = true
 draw_tabs = true
 draw_spaces = true
 
-[node name="TerminalInputContainer" type="PanelContainer" parent="."]
+[node name="TerminalInputContainer" type="PanelContainer" parent="." unique_id=1293612279]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.8
@@ -57,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TerminalInput" type="TextEdit" parent="TerminalInputContainer"]
+[node name="TerminalInput" type="TextEdit" parent="TerminalInputContainer" unique_id=1352212504]
 layout_mode = 2
 placeholder_text = "Command..."
 wrap_mode = 1

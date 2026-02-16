@@ -18,7 +18,8 @@ var variables = {
 
 func run_command(command : String):
 	add_to_log("> " + command)
-	
+	if command == "help":
+		add_to_log(str(DirAccess.get_files_at("res://addons/terminal/applications/")))
 	var split_command :	Array
 	var regex_split = RegEx.new()
 	regex_split.compile("[^\\s\"']+|\"([^\"]*)\"|'([^']*)'")
@@ -40,6 +41,8 @@ func run_command(command : String):
 		var application = split_command[0]
 		var params = split_command.slice(1,split_command.size())
 		run_application(application,params)
+		if application == "help":
+			add_to_log(str(DirAccess.get_files_at(path)))
 
 func clear():
 	log = []

@@ -1,4 +1,5 @@
 extends Control
+class_name terminal
 signal TerminalMenuToggled
 
 # Called when the node enters the scene tree for the first time.
