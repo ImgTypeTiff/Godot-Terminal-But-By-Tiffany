@@ -1,4 +1,5 @@
-# Godot-Terminal Plugin
+# Godot-Terminal Plugin But By Tiffany.
+
 ![Capture2](https://github.com/user-attachments/assets/30a48a49-f320-4942-941d-9e821fcca25d)
 
 The **Godot-Terminal** plugin allows developers to add in-game terminals to their projects, giving players access to commands, cheats, and custom in-game programs. Inspired by classic games like **Doom** and **Skyrim**, this plugin provides a flexible, customizable solution for creating immersive game experiences.
