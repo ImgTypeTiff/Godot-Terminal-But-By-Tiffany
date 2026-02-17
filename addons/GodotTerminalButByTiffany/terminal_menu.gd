@@ -1,5 +1,6 @@
+@icon("res://addons/GodotTerminalButByTiffany/Tiff-Terminal.png")
 extends Control
-class_name terminal
+class_name TerminalSetup
 signal TerminalMenuToggled
 
 # Called when the node enters the scene tree for the first time.
@@ -8,6 +9,7 @@ var textInput : TextEdit
 var previousMouseMode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
 var scrollContainer : ScrollContainer
 
+var profile: String = "tiffany@terminal"
 @export var menuOpenInputAxis : String 
 @export var menuUpAxis : String
 @export var menuClearAxis : String
@@ -25,13 +27,15 @@ func _ready():
 	scrollContainer = get_node("ScrollContainer")
 	scrollContainer.get_v_scroll_bar().changed.connect(_on_terminal_change_size)
 	_set_active(startOpen)
-	
+	# Terminal.FontRegistry["font"]
+	$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["font"])
+	$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["font"])
 func _input(event):
 	if(event.is_action_pressed(menuOpenInputAxis)):
 		_set_active(!open)
 	if(open):
 		if(event.is_action_pressed(menuClearAxis)):
-			textInput.text = ""
+			textInput.text = profile + ": "
 			await get_tree().process_frame
 			textInput.set_caret_column(len(textInput.text))
 		elif(event.is_action_pressed(menuUpAxis)):
@@ -41,7 +45,7 @@ func _input(event):
 				else:
 					commandIndex = commandIndex - 1
 				if(commandIndex > -1):
-					textInput.text = commandsRemembered[commandIndex]
+					textInput.text = profile + ": " + commandsRemembered[commandIndex]
 					await get_tree().process_frame
 					textInput.set_caret_column(len(textInput.text))
 
@@ -75,7 +79,7 @@ func _on_terminal_force_log(log):
 	renderedLogs.text = new_log_text
 
 func _on_text_edit_text_changed():
-	var command = textInput.text
+	var command = textInput.text.replace(profile+": ","")
 	if '\n' in command:
 		Terminal.run_command(command.replace("\n",""))
 		remember_command(command.replace("\n",""))

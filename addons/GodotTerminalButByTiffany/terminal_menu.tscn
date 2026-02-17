@@ -1,19 +1,29 @@
 [gd_scene format=3 uid="uid://ckc1sg17rg3xr"]
 
-[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/terminal/terminal_menu.gd" id="1_x7sc3"]
+[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/GodotTerminalButByTiffany/terminal_menu.gd" id="1_x7sc3"]
 
 [sub_resource type="GDScript" id="GDScript_6h83f"]
 script/source = "extends TextEdit
+@onready var text_edit: TextEdit = self
+@onready var PREFIX = $\"../..\".profile + \": \"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	text_edit.text = PREFIX
+	text_edit.set_caret_column(PREFIX.length())
 
+func _on_text_edit_text_changed():
+	if not text_edit.text.begins_with(PREFIX):
+		var cursor := text_edit.get_caret_column()
+		text_edit.text = PREFIX
+		text_edit.set_caret_column(max(cursor, PREFIX.length()))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _input(event):
+	if text_edit.get_caret_column() < PREFIX.length():
+		text_edit.set_caret_column(PREFIX.length())
+
+func _gui_input(event: InputEvent) -> void:
+	if text_edit.get_caret_column() < PREFIX.length():
+		text_edit.set_caret_column(PREFIX.length())
 "
 
 [node name="TerminalMenu" type="Control" unique_id=917503826]
@@ -65,3 +75,4 @@ caret_blink = true
 script = SubResource("GDScript_6h83f")
 
 [connection signal="text_changed" from="TerminalInputContainer/TerminalInput" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="TerminalInputContainer/TerminalInput" to="TerminalInputContainer/TerminalInput" method="_on_text_edit_text_changed"]

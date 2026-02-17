@@ -15,8 +15,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Terminal"
-run/main_scene="res://addons/terminal/terminal_menu.tscn"
+run/main_scene="res://addons/GodotTerminalButByTiffany/terminal_menu.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,7 +31,7 @@ project/assembly_name="Terminal"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/terminal/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotTerminalButByTiffany/plugin.cfg")
 
 [input]
 
@@ -51,6 +53,5 @@ terminal_clear={
 
 [rendering]
 
-renderer/rendering_method="mobile"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true
