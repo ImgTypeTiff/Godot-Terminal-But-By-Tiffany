@@ -24,6 +24,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 Terminal="*uid://jyoljv246tfx"
+SceneLoader="*uid://dikwhey7w5kl6"
+Global="*uid://dr78pnc0ds87b"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -31,7 +37,7 @@ project/assembly_name="Terminal"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GodotTerminalButByTiffany/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotTerminalButByTiffany/plugin.cfg", "res://addons/scene_loader/plugin.cfg")
 
 [input]
 

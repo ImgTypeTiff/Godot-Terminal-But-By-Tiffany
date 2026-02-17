@@ -6,11 +6,12 @@ var generate_button: TextureButton
 
 # Replace this value with a PascalCase autoload name, as per the GDScript style guide.
 const AUTOLOAD_NAME = "Terminal"
-
+const generator_script = preload("res://addons/GodotTerminalButByTiffany/editor_tools/generate_terminal_registry.gd")
 
 func _enter_tree():
+	generator_script.new()._run()
 	# The autoload can be a scene or script file.
-	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/GodotTerminalButByTiffany/terminal.gd")
+	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/GodotTerminalButByTiffany/assets/terminal.gd")
 	# (keep all your current initialization code here)
 	# Example placeholder:
 	print("Terminal plugin initialized")

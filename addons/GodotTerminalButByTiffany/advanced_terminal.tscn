@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ckc1sg17rg3xr"]
+[gd_scene format=3 uid="uid://kjeb8tttqreb"]
 
-[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/GodotTerminalButByTiffany/assets/terminal_menu.gd" id="1_x7sc3"]
+[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/GodotTerminalButByTiffany/assets/terminal_menu.gd" id="1_orwct"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vopb3"]
 bg_color = Color(0, 0, 0, 1)
@@ -42,19 +42,19 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="TerminalMenu" type="Control" unique_id=917503826]
+[node name="TerminalMenu" type="Control" unique_id=1622496406]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x7sc3")
+script = ExtResource("1_orwct")
 menuOpenInputAxis = "toggle_terminal_menu"
 menuUpAxis = "terminal_up"
 menuClearAxis = "terminal_clear"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1752248051]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1901294073]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -62,11 +62,10 @@ anchor_bottom = 0.8
 offset_right = -0.046020508
 offset_bottom = -0.18591309
 
-[node name="Label" type="TextEdit" parent="ScrollContainer" unique_id=250962370]
+[node name="Label" type="TextEdit" parent="ScrollContainer" unique_id=1229746351]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vopb3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_vopb3")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_7k0la")
@@ -78,7 +77,7 @@ draw_control_chars = true
 draw_tabs = true
 draw_spaces = true
 
-[node name="TerminalInputContainer" type="PanelContainer" parent="." unique_id=1293612279]
+[node name="TerminalInputContainer" type="PanelContainer" parent="." unique_id=1795443674]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.8
@@ -88,7 +87,7 @@ offset_top = -10.400024
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TerminalInput" type="CodeEdit" parent="TerminalInputContainer" unique_id=982463284]
+[node name="TerminalInput" type="CodeEdit" parent="TerminalInputContainer" unique_id=364382168]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_2crl4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qmn2t")

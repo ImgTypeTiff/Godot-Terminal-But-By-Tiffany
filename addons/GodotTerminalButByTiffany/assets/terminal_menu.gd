@@ -1,20 +1,35 @@
 @icon("res://addons/GodotTerminalButByTiffany/Tiff-Terminal.png")
 extends Control
+##Root for terminal setup.
+##
+##Uses a input text ([member TerminalSetup.textInput]) from a [TextEdit], [LineEdit], [CodeEdit], etc
+##and detects if enter pressed. More specifically, [code] \n [/code].
+##
+##
+##
 class_name TerminalSetup
 signal TerminalMenuToggled
 
 # Called when the node enters the scene tree for the first time.
+## Node that displays rendered logs.
 var renderedLogs : TextEdit
-var textInput : TextEdit
+## Node that inputs text, [TextEdit], [LineEdit], [CodeEdit], etc.
+var textInput : CodeEdit
+## The last mouse mode before opening the terminal.
 var previousMouseMode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
-var scrollContainer : ScrollContainer
 
-var profile: String = "tiffany@terminal"
+var scrollContainer : ScrollContainer
+## The array of profiles, will soon add passwords.
+var profile_list: Array = Terminal.profile_list
+var profile = Terminal.profile
+
 @export var menuOpenInputAxis : String 
 @export var menuUpAxis : String
 @export var menuClearAxis : String
 @export var startOpen : bool = true
 @export var maxCommandsRemembered : int = 5
+
+## the commands currently saved.
 var commandsRemembered : Array = []
 var commandIndex : int = -1
 
@@ -30,6 +45,7 @@ func _ready():
 	# Terminal.FontRegistry["font"]
 	$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["font"])
 	$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["font"])
+
 func _input(event):
 	if(event.is_action_pressed(menuOpenInputAxis)):
 		_set_active(!open)
@@ -62,16 +78,15 @@ func _set_active(new_state : bool):
 		textInput.grab_focus() 
 	else:
 		Input.set_mouse_mode(previousMouseMode)
-		
 
-	
 func _on_terminal_change_size():
 	scrollContainer.scroll_vertical = scrollContainer.get_v_scroll_bar().max_value
-	
+
 func _on_terminal_print(statement):
 	renderedLogs.text = renderedLogs.text+"\n"+statement
+	print(statement)
 	pass
-	
+
 func _on_terminal_force_log(log):
 	var new_log_text = ""
 	for statement in log:
@@ -85,7 +100,11 @@ func _on_text_edit_text_changed():
 		remember_command(command.replace("\n",""))
 		textInput.text = ""
 		commandIndex = -1
-		
+
+## Remembers inputted command. 
+##
+##Removes last array entry if [member TerminalSetup.commandsRemembered] is bigger than [member TerminalSetup.maxCommandsRemembered]
+##
 func remember_command(command):
 	commandsRemembered.push_back(command)
 	if(len(commandsRemembered) > maxCommandsRemembered):

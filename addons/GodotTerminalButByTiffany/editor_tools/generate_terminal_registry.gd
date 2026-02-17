@@ -3,8 +3,8 @@ extends EditorScript
 
 const FONT_PATH := "res://addons/GodotTerminalButByTiffany/Font/"
 const APPS_PATH := "res://addons/GodotTerminalButByTiffany/applications/"
-const APP_OUTPUT_PATH := "res://addons/GodotTerminalButByTiffany/app_registries/app_registry.gd"
-const FONT_OUTPUT_PATH := "res://addons/GodotTerminalButByTiffany/app_registries/font_registry.gd"
+const APP_OUTPUT_PATH := "res://addons/GodotTerminalButByTiffany/registries/app_registry.gd"
+const FONT_OUTPUT_PATH := "res://addons/GodotTerminalButByTiffany/registries/font_registry.gd"
 
 func _run():
 	var dir := DirAccess.open(APPS_PATH)
@@ -48,7 +48,7 @@ func _run():
 	lines.append("}")
 	
 	# ensure output folder exists
-	DirAccess.make_dir_recursive_absolute("res://addons/GodotTerminalButByTiffany/app_registries")
+	DirAccess.make_dir_recursive_absolute("res://addons/GodotTerminalButByTiffany/registries")
 
 	var f := FileAccess.open(APP_OUTPUT_PATH, FileAccess.WRITE)
 	if f == null:

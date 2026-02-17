@@ -2,14 +2,15 @@ extends Node
 
 signal print_log(statement : String)
 signal force_log(statements : Array)
-
+var profile_list: Array = ["tiffany@terminal"]
+var profile = profile_list[0]
 var log : Array = []
 var path := "res://addons/GodotTerminalButByTiffany/applications/"
 
 var variables := {
 	"camid": Callable(self, "get_cam_id")
 }
-const FontRegistry = preload("res://addons/GodotTerminalButByTiffany/app_registries/font_registry.gd").APPLICATIONS
+const FontRegistry = preload("res://addons/GodotTerminalButByTiffany/registries/font_registry.gd").APPLICATIONS
 const AppRegistry = preload("res://addons/GodotTerminalButByTiffany/registries/app_registry.gd")
 
 func get_cam_id() -> String:
@@ -20,7 +21,7 @@ func get_cam_id() -> String:
 
 
 func run_command(command : String):
-	add_to_log("> " + command)
+	add_to_log(profile + ": " + command)
 
 	var regex := RegEx.new()
 	regex.compile("[^\\s\"']+|\"([^\"]*)\"|'([^']*)'")
