@@ -9,7 +9,7 @@ var path := "res://addons/GodotTerminalButByTiffany/applications/"
 var variables := {
 	"camid": Callable(self, "get_cam_id")
 }
-const FontRegistry = preload("res://addons/GodotTerminalButByTiffany/app_registries/font_registry.gd").APPLICATIONS
+const FontRegistry = preload("res://addons/GodotTerminalButByTiffany/registries/font_registry.gd").APPLICATIONS
 const AppRegistry = preload("res://addons/GodotTerminalButByTiffany/registries/app_registry.gd")
 
 func get_cam_id() -> String:
@@ -17,7 +17,6 @@ func get_cam_id() -> String:
 	if cam == null:
 		return "null"
 	return str(cam.get_instance_id())
-
 
 func run_command(command : String):
 	add_to_log("> " + command)

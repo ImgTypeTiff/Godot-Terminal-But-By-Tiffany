@@ -5,7 +5,6 @@ func _init():
 	description="Shows descriptions of all available programs"
 	
 func run(terminal : Terminal, params : Array):
-	var files = DirAccess.get_files_at(terminal.path)
 	if(is_verbose(params)):
 		for key in AppList:
 			var application: TerminalApplication = AppList[key].new()

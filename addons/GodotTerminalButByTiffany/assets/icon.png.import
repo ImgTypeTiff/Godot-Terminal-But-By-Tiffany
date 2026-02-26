@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bio4scvbq5pqi"
-path="res://.godot/imported/smol.png-166a7d39156eb5d84622e719f49b2347.ctex"
+uid="uid://dau5gonmvqlnv"
+path="res://.godot/imported/icon.png-8b5d8f820b243643163684a7047a5765.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/GodotTerminalButByTiffany/smol.png"
-dest_files=["res://.godot/imported/smol.png-166a7d39156eb5d84622e719f49b2347.ctex"]
+source_file="res://addons/GodotTerminalButByTiffany/assets/icon.png"
+dest_files=["res://.godot/imported/icon.png-8b5d8f820b243643163684a7047a5765.ctex"]
 
 [params]
 

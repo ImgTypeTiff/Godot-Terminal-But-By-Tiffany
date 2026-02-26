@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Terminal"
-run/main_scene="res://addons/GodotTerminalButByTiffany/terminal_menu.tscn"
+run/main_scene="res://addons/GodotTerminalButByTiffany/assets/terminal_menu.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/show_image=false
 boot_splash/use_filter=false

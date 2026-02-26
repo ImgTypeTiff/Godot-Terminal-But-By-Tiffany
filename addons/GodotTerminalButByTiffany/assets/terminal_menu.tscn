@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckc1sg17rg3xr"]
 
-[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/GodotTerminalButByTiffany/terminal_menu.gd" id="1_x7sc3"]
+[ext_resource type="Script" uid="uid://bp7yacx5gmej4" path="res://addons/GodotTerminalButByTiffany/assets/terminal_menu.gd" id="1_x7sc3"]
 
 [sub_resource type="GDScript" id="GDScript_6h83f"]
 script/source = "extends TextEdit

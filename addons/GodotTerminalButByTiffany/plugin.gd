@@ -21,7 +21,7 @@ func _enter_tree():
 
 	# --- Create the generate button ---
 	generate_button = TextureButton.new()
-	generate_button.texture_normal = load("res://addons/GodotTerminalButByTiffany/smol.png")
+	generate_button.texture_normal = load("res://addons/GodotTerminalButByTiffany/assets/smol.png")
 	generate_button.tooltip_text = "Scan commands folder and regenerate the terminal registry"
 	generate_button.pressed.connect(_on_generate_pressed)
 	terminal_dock.add_child(generate_button)
@@ -38,7 +38,7 @@ func _exit_tree():
 		terminal_dock.queue_free()
 
 func _on_generate_pressed():
-	var generator_script = load("res://addons/GodotTerminalButByTiffany/editor_tools/generate_terminal_registry.gd")
+	var generator_script = load("res://addons/GodotTerminalButByTiffany/assets/editor_tools/generate_terminal_registry.gd")
 	if generator_script:
 		generator_script.new()._run()
 

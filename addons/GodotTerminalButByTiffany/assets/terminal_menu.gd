@@ -28,8 +28,8 @@ func _ready():
 	scrollContainer.get_v_scroll_bar().changed.connect(_on_terminal_change_size)
 	_set_active(startOpen)
 	# Terminal.FontRegistry["font"]
-	$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["font"])
-	$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["font"])
+	$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
+	$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
 func _input(event):
 	if(event.is_action_pressed(menuOpenInputAxis)):
 		_set_active(!open)
