@@ -17,6 +17,7 @@ func _run():
 	DirAccess.make_dir_recursive_absolute("res://addons/GodotTerminalButByTiffany/registries")
 	scan_for_files(APP_OUTPUT_PATH,APPS_PATH,"")
 	scan_for_files(FONT_OUTPUT_PATH,FONT_PATH,"")
+	scan_for_files(FILE_OUTPUT_PATH, "res://","", true)
 
 func font_registry():
 	var dir = DirAccess.open(FONT_PATH)

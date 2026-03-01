@@ -7,5 +7,6 @@ const APPLICATIONS := {
 	"set": preload("res://addons/GodotTerminalButByTiffany/assets/applications/set.gd"),
 	"spawn": preload("res://addons/GodotTerminalButByTiffany/assets/applications/spawn.gd"),
 	"test": preload("res://addons/GodotTerminalButByTiffany/assets/applications/test.gd"),
+	"tiffify": preload("res://addons/GodotTerminalButByTiffany/assets/applications/tiffify.gd"),
 	"tree": preload("res://addons/GodotTerminalButByTiffany/assets/applications/tree.gd"),
 }

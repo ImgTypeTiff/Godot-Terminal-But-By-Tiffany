@@ -51,3 +51,7 @@ func run_application(application_id: String, params: Array):
 func add_to_log(statement : String):
 	log.append(statement)
 	emit_signal("print_log", statement)
+
+func add_error(statement : String):
+	log.append(statement)
+	emit_signal("print_log", statement)

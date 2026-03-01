@@ -10,7 +10,7 @@ const AUTOLOAD_NAME = "Terminal"
 
 func _enter_tree():
 	# The autoload can be a scene or script file.
-	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/GodotTerminalButByTiffany/terminal.gd")
+	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/GodotTerminalButByTiffany/assets/terminal.gd")
 	# (keep all your current initialization code here)
 	# Example placeholder:
 	print("Terminal plugin initialized")

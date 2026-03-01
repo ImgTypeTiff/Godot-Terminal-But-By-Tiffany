@@ -14,6 +14,3 @@ func breakdown_params(params):
 		var param_breakdown = [params[i], i]
 		to_return += [param_breakdown]
 	return to_return
-
-func add_to_log(text):
-	_terminal1.add_to_log(text)
