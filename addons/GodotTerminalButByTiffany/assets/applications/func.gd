@@ -9,7 +9,7 @@ enum NodeParseType {
 var parseType = NodeParseType.byId
 
 func _init():
-	name="Func"
+	app_name="Func"
 	description="Calls a method on a given node by id"
 	
 func run(terminal : Terminal, params : Array):

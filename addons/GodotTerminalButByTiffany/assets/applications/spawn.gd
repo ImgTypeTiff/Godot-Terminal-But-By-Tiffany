@@ -1,7 +1,7 @@
 extends TerminalApplication
 
 func _init():
-	name="Spawn"
+	app_name="Spawn"
 	description="spawns a prefab scene"
 	
 func run(terminal : Terminal, params : Array):

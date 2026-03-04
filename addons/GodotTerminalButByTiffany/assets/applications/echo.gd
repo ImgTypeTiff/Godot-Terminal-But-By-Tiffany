@@ -1,7 +1,7 @@
 extends TerminalApplication
 
 func _init():
-	name="Echo"
+	app_name="Echo"
 	description="Write arguments to the standard output"
 	
 func run(terminal : Terminal, params : Array):

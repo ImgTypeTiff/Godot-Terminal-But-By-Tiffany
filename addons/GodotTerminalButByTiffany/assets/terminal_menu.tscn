@@ -26,6 +26,9 @@ func _gui_input(event: InputEvent) -> void:
 		text_edit.set_caret_column(PREFIX.length())
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcb4n"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="TerminalMenu" type="Control" unique_id=917503826]
 layout_mode = 3
 anchors_preset = 15
@@ -73,6 +76,21 @@ placeholder_text = "Command..."
 wrap_mode = 1
 caret_blink = true
 script = SubResource("GDScript_6h83f")
+
+[node name="ERR_BACKGROUND" type="Panel" parent="." unique_id=2082738523]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kcb4n")
+
+[node name="Label" type="Label" parent="." unique_id=1266206812]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="text_changed" from="TerminalInputContainer/TerminalInput" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_changed" from="TerminalInputContainer/TerminalInput" to="TerminalInputContainer/TerminalInput" method="_on_text_edit_text_changed"]

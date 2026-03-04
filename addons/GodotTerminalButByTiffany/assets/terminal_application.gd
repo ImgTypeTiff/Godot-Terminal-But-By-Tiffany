@@ -1,5 +1,6 @@
+extends Node
 class_name TerminalApplication
-var name : String = "Application"
+var app_name : String = "Application"
 var description : String = ""
 const AppList = Terminal.AppRegistry.APPLICATIONS
 var _terminal1: Terminal

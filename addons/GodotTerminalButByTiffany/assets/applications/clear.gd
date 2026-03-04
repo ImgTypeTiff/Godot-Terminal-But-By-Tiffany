@@ -1,7 +1,7 @@
 extends TerminalApplication
 
 func _init():
-	name="Clear"
+	app_name="Clear"
 	description="Clears the log"
 	
 func run(terminal : Terminal, params : Array):

@@ -3,7 +3,7 @@ extends TerminalApplication
 var max_depth = 10000
 var _terminal : Terminal
 func _init():
-	name="Tree"
+	app_name="Tree"
 	description="Shows the node tree"
 	
 func run(terminal : Terminal, params : Array):

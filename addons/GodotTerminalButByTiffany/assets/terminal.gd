@@ -1,7 +1,9 @@
 extends Node
 
+signal clear_log
 signal print_log(statement : String)
 signal force_log(statements : Array)
+
 
 var log : Array = []
 var path := "res://addons/GodotTerminalButByTiffany/applications/"
@@ -55,3 +57,7 @@ func add_to_log(statement : String):
 func add_error(statement : String):
 	log.append(statement)
 	emit_signal("print_log", statement)
+
+func clear():
+	log = []
+	emit_signal("clear_log")

@@ -9,7 +9,8 @@ var textInput : TextEdit
 var previousMouseMode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
 var scrollContainer : ScrollContainer
 
-var profile: String = "tiffany@terminal"
+@export var profile: String = "tiffany@terminal"
+
 @export var menuOpenInputAxis : String 
 @export var menuUpAxis : String
 @export var menuClearAxis : String
@@ -20,16 +21,19 @@ var commandIndex : int = -1
 
 var open : bool
 func _ready():
-	Terminal.print_log.connect(_on_terminal_print)
-	Terminal.force_log.connect(_on_terminal_force_log)
-	textInput = get_node("TerminalInputContainer/TerminalInput")
-	renderedLogs = get_node("ScrollContainer/Label")
-	scrollContainer = get_node("ScrollContainer")
-	scrollContainer.get_v_scroll_bar().changed.connect(_on_terminal_change_size)
-	_set_active(startOpen)
-	# Terminal.FontRegistry["font"]
-	$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
-	$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
+	if !$"/root".has_node("Terminal"):
+		pass
+	else:
+		Terminal.print_log.connect(_on_terminal_print)
+		Terminal.force_log.connect(_on_terminal_force_log)
+		textInput = get_node("TerminalInputContainer/TerminalInput")
+		renderedLogs = get_node("ScrollContainer/Label")
+		scrollContainer = get_node("ScrollContainer")
+		scrollContainer.get_v_scroll_bar().changed.connect(_on_terminal_change_size)
+		_set_active(startOpen)
+		# Terminal.FontRegistry["font"]
+		$ScrollContainer/Label.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
+		$TerminalInputContainer/TerminalInput.add_theme_font_override("font", Terminal.FontRegistry["windows_command_prompt"])
 func _input(event):
 	if(event.is_action_pressed(menuOpenInputAxis)):
 		_set_active(!open)

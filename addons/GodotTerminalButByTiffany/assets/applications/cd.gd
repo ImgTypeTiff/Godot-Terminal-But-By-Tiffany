@@ -1,8 +1,8 @@
 extends TerminalApplication
 
 func _init():
-	app_name="Quit"
-	description="Quits the application"
+	app_name="Test"
+	description="Print Test"
 	
 func run(terminal : Terminal, params : Array):
-	terminal.get_tree().quit()
+	terminal.add_to_log("Running Application")

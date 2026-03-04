@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8l3pe2r2sa1p"]
 
 [ext_resource type="Texture2D" uid="uid://dutaxn102ursg" path="res://addons/GodotTerminalButByTiffany/Tiff-Terminal.png" id="1_vtvul"]
-[ext_resource type="Script" uid="uid://d1crg0xe7uee4" path="res://addons/GodotTerminalButByTiffany/assets/test_button.gd" id="2_d55q1"]
+[ext_resource type="Script" path="res://addons/GodotTerminalButByTiffany/assets/test_button.gd" id="2_d55q1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kxwo"]
 bg_color = Color(0, 0, 0, 1)

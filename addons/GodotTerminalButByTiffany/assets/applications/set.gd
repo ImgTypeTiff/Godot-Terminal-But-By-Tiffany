@@ -1,7 +1,7 @@
 extends TerminalApplication
 
 func _init():
-	name="Set"
+	app_name="Set"
 	description="Sets a variable in the terminal"
 	
 func run(terminal : Terminal, params : Array):

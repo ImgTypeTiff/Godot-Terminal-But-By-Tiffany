@@ -1,29 +1,7 @@
-const APPLICATIONS := {
+const FILES := {
+	"addons": {
+
+	},
 	"icon.svg": preload("res://icon.svg"),
-	"README.md": preload("res://README.md"),
-	"plugin.gd": preload("res://addons/GodotTerminalButByTiffany/plugin.gd"),
-	"Tiff-Terminal.png": preload("res://addons/GodotTerminalButByTiffany/Tiff-Terminal.png"),
-	"icon.png": preload("res://addons/GodotTerminalButByTiffany/assets/icon.png"),
-	"smol.png": preload("res://addons/GodotTerminalButByTiffany/assets/smol.png"),
-	"terminal.gd": preload("res://addons/GodotTerminalButByTiffany/assets/terminal.gd"),
-	"terminal_application.gd": preload("res://addons/GodotTerminalButByTiffany/assets/terminal_application.gd"),
-	"terminal_menu.gd": preload("res://addons/GodotTerminalButByTiffany/assets/terminal_menu.gd"),
-	"terminal_menu.tscn": preload("res://addons/GodotTerminalButByTiffany/assets/terminal_menu.tscn"),
-	"test_button.gd": preload("res://addons/GodotTerminalButByTiffany/assets/test_button.gd"),
-	"test_spawn.tscn": preload("res://addons/GodotTerminalButByTiffany/assets/test_spawn.tscn"),
-	"windows_command_prompt.ttf": preload("res://addons/GodotTerminalButByTiffany/Font/windows_command_prompt.ttf"),
-	"app_registry.gd": preload("res://addons/GodotTerminalButByTiffany/registries/app_registry.gd"),
-	"file_registry.gd": preload("res://addons/GodotTerminalButByTiffany/registries/file_registry.gd"),
-	"font_registry.gd": preload("res://addons/GodotTerminalButByTiffany/registries/font_registry.gd"),
-	"clear.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/clear.gd"),
-	"echo.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/echo.gd"),
-	"func.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/func.gd"),
-	"help.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/help.gd"),
-	"quit.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/quit.gd"),
-	"set.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/set.gd"),
-	"spawn.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/spawn.gd"),
-	"test.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/test.gd"),
-	"tiffify.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/tiffify.gd"),
-	"tree.gd": preload("res://addons/GodotTerminalButByTiffany/assets/applications/tree.gd"),
-	"generate_terminal_registry.gd": preload("res://addons/GodotTerminalButByTiffany/assets/editor_tools/generate_terminal_registry.gd"),
+	"lol.mp3": preload("res://lol.mp3")
 }
